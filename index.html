@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azurix Hub - Biology Tools & Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Azurix</h2>
+            <button class="toggle-btn" id="toggleBtn" aria-label="Toggle sidebar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#tools">Our Tools</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Azurix Hub</h1>
+                <p class="hero-subtitle">Innovative Biology Tools for Modern Research</p>
+                <p class="hero-description">
+                    Empowering scientists and researchers with cutting-edge tools 
+                    designed to accelerate biological discoveries and enhance laboratory efficiency.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#tools" class="btn btn-primary">Explore Tools</a>
+                    <a href="#contact" class="btn btn-secondary">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Azurix</h2>
+                <p>
+                    Azurix is dedicated to developing state-of-the-art tools and solutions 
+                    for the biology and life sciences community. Our mission is to streamline 
+                    research workflows and provide innovative technologies that enable 
+                    breakthrough discoveries.
+                </p>
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔬</div>
+                        <h3>Advanced Research</h3>
+                        <p>Tools designed for cutting-edge biological research and analysis</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>High Performance</h3>
+                        <p>Optimized solutions for fast and accurate results</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>Collaborative</h3>
+                        <p>Built for teams to work together seamlessly</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools" class="section bg-light">
+            <div class="container">
+                <h2>Our Tools</h2>
+                <p class="section-intro">
+                    Explore our comprehensive suite of biology tools designed to meet 
+                    the diverse needs of modern research laboratories.
+                </p>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>Data Analysis Suite</h3>
+                        <p>Powerful statistical and computational tools for biological data analysis</p>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Lab Management System</h3>
+                        <p>Streamline your laboratory operations and sample tracking</p>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Genomics Platform</h3>
+                        <p>Advanced tools for genomic sequencing and analysis</p>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Microscopy Software</h3>
+                        <p>Image processing and analysis for microscopy applications</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="section">
+            <div class="container">
+                <h2>Research & Development</h2>
+                <p>
+                    Our R&D team is constantly innovating to bring you the latest 
+                    advancements in biological research technology. We collaborate 
+                    with leading research institutions worldwide to ensure our tools 
+                    meet the highest standards of scientific rigor.
+                </p>
+                <div class="research-stats">
+                    <div class="stat">
+                        <h3>500+</h3>
+                        <p>Research Partners</p>
+                    </div>
+                    <div class="stat">
+                        <h3>1000+</h3>
+                        <p>Publications</p>
+                    </div>
+                    <div class="stat">
+                        <h3>50+</h3>
+                        <p>Countries</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section bg-light">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <p class="section-intro">
+                    Ready to enhance your research capabilities? Contact us to learn 
+                    more about our tools and how we can support your work.
+                </p>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 Azurix Hub. All rights reserved.</p>
+                <p>Innovative Biology Tools for Modern Research</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
