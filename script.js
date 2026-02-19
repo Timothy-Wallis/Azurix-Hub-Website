@@ -1,3 +1,6 @@
+// Constants
+const MOBILE_BREAKPOINT = 768;
+
 // Sidebar Toggle Functionality
 const sidebar = document.getElementById('sidebar');
 const toggleBtn = document.getElementById('toggleBtn');
@@ -68,18 +71,38 @@ contactForm.addEventListener('submit', (e) => {
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
     
-    // Simple validation
+    // Simple validation (HTML5 required attribute handles basic validation)
     if (name && email && message) {
-        alert('Thank you for your message! We will get back to you soon.');
+        // In a real application, this would send data to a server
+        showFormFeedback('Thank you for your message! We will get back to you soon.', 'success');
         contactForm.reset();
-    } else {
-        alert('Please fill in all fields.');
     }
 });
 
+// Form feedback function for better accessibility
+function showFormFeedback(message, type) {
+    const existingFeedback = document.querySelector('.form-feedback');
+    if (existingFeedback) {
+        existingFeedback.remove();
+    }
+    
+    const feedback = document.createElement('div');
+    feedback.className = `form-feedback form-feedback-${type}`;
+    feedback.setAttribute('role', 'status');
+    feedback.setAttribute('aria-live', 'polite');
+    feedback.textContent = message;
+    
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    submitButton.parentNode.insertBefore(feedback, submitButton.nextSibling);
+    
+    setTimeout(() => {
+        feedback.remove();
+    }, 5000);
+}
+
 // Responsive Sidebar - Auto-collapse on mobile
 function handleResize() {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= MOBILE_BREAKPOINT) {
         sidebar.classList.add('collapsed');
     } else {
         sidebar.classList.remove('collapsed');

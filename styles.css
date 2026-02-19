@@ -356,6 +356,26 @@ body {
     resize: vertical;
 }
 
+/* Form Feedback Messages */
+.form-feedback {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+}
+
+.form-feedback-success {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+}
+
+.form-feedback-error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
 /* Footer */
 .footer {
     background: var(--text-color);
