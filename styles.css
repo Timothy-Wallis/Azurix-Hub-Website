@@ -16,6 +16,7 @@
     --sidebar-width: 250px;
     --sidebar-collapsed-width: 70px;
     --transition-speed: 0.3s;
+    --offset-color-text: #afc5ec;
 }
 
 body {
@@ -465,22 +466,83 @@ header {
     grid-template-columns: 1fr 3fr;
     gap : 2rem;
 }
-
-.account-nav ul {
-    gap: 1rem;
-    list-style: none;
-}
-.account-nav ul li {
-    margin-bottom: 0.5rem;
-}
-.account-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-.account-nav {
+#account-nav {
     background-color: var(--secondary-color);
     padding: 1rem;
-    border-radius: 0.5rem;  
+    border-radius: 0.5rem; 
+    padding: 2rem 1rem; 
+}
+
+#account-nav ul {
+    list-style: none;
+}
+
+#account-nav ul li {
+    margin: 0rem .5rem;
+}
+
+.menu-account-roll {
+    margin: -12rem 0rem 0rem 0rem;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+}
+.menu-account-roll h2 {
+    margin-bottom: 1rem;
+    color: var(--offset-color-text)
+}
+
+.profile-overview .content{
+    margin: 0rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+}
+.profile-overview .content input[type="text"], .profile-overview .content input[type="email"], .profile-overview .content input[type="password"] {
+    margin-bottom: 1rem;
+    padding: .5rem;
+    padding-left: 1rem;
+    border-style: none;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 2rem;
+}
+
+.profile-overview .content input[type="text"]::placeholder,
+.profile-overview .content input[type="email"]::placeholder,
+.profile-overview .content input[type="password"]::placeholder {
+    color: var(--offset-color-text);
+}
+
+.profile-overview .content input:focus[type="text"],
+.profile-overview .content input:focus[type="email"],
+.profile-overview .content input:focus[type="password"] {
+    outline: none;
+    background-color: var(--primary-color);
+}
+
+.profile-overview .content input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: .75rem 1.5rem;
+    border-radius: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-overview .content input[type="submit"]:hover {
+    background-color: var(--accent-color);
+}
+
+.profile-overview .content hr {
+    padding: 1rem;
+}
+
+.profile-overview .content label{
+    margin-left: .5rem;
+    margin-bottom: .5rem;
 }

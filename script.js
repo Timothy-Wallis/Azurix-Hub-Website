@@ -3,12 +3,7 @@ const MOBILE_BREAKPOINT = 768;
 
 // Sidebar Toggle Functionality
 const sidebar = document.getElementById('sidebar');
-const toggleBtn = document.getElementById('toggleBtn');
 const mainContent = document.getElementById('mainContent');
-
-toggleBtn.addEventListener('click', () => {
-    sidebar.classList.toggle('collapsed');
-});
 
 // Smooth Scrolling for Navigation Links
 const navLinks = document.querySelectorAll('.nav-links a');
@@ -37,6 +32,16 @@ navLinks.forEach(link => {
     });
 });
 
+const redirectLinks = document.querySelectorAll('.redirect-link');
+
+redirectLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const url = link.getAttribute('href');
+        window.open(url, '_blank');
+    });
+});
+
 // Update Active Link on Scroll
 const sections = document.querySelectorAll('section[id]');
 
@@ -61,24 +66,6 @@ function updateActiveLink() {
 
 window.addEventListener('scroll', updateActiveLink);
 
-// Contact Form Handling
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    // Simple validation (HTML5 required attribute handles basic validation)
-    if (name && email && message) {
-        // In a real application, this would send data to a server
-        showFormFeedback('Thank you for your message! We will get back to you soon.', 'success');
-        contactForm.reset();
-    }
-});
-
 // Form feedback function for better accessibility
 function showFormFeedback(message, type) {
     const existingFeedback = document.querySelector('.form-feedback');
@@ -99,21 +86,6 @@ function showFormFeedback(message, type) {
         feedback.remove();
     }, 5000);
 }
-
-// Responsive Sidebar - Auto-collapse on mobile
-function handleResize() {
-    if (window.innerWidth <= MOBILE_BREAKPOINT) {
-        sidebar.classList.add('collapsed');
-    } else {
-        sidebar.classList.remove('collapsed');
-    }
-}
-
-// Run on load
-handleResize();
-
-// Run on resize
-window.addEventListener('resize', handleResize);
 
 // Add animation on scroll for feature cards
 const observerOptions = {

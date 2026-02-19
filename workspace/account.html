@@ -13,28 +13,44 @@
         <h1>Manage Your Account</h1>
     </header>
     <div class="body-content">
-        <nav class="account-nav">
+        <nav id="account-nav" class="nav-links">
             <ul>
-                <li><a href="./account.html">Profile</a></li>
-                <li><a href="./collaboration.html">Collaboration</a></li>
-                <li><a href="./settings.html">Settings</a></li>
+                <li><a href="#profile" class="active">Profile</a></li>
+                <li><a href="#collaboration">Collaboration</a></li>
+                <li><a href="#settings">Settings</a></li>
             </ul>
         </nav>
         <p>Welcome to your account dashboard. Here you can manage your profile, view your activity, and access your
             saved tools and resources</p>
-            <div></div>
-            <div class="profile-overview">
+        <div>
+        </div>
+        <div class="menu-account-roll">
+            <div class="profile-overview" id="profile">
                 <h2>Profile Overview</h2>
-                <p>Name: John Doe</p>
-                <p>Email: john.doe@example.com</p>
+                <form class="content">
+                    <label for="name">Name</label>
+                    <input type="text" placeholder="Name" id="name">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="Email" id="email">
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Password" id="password">
+                    <input type="submit" value="Update Profile" class="submit-btn-primary">
+                </form>
             </div>
+            <hr>
+            <div class="collaboration" id="collaboration">
+                <h2>Collaboration</h2>
+                <p>Connect with other researchers, share your work, and collaborate on projects.</p>
+            </div>
+        </div>
     </div>
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Azurix. All rights reserved.</p>
-            <p>Contact us: <a href="mailto:timothywallis@ucmerced.edu">timothywallis@ucmerced.edu</a></p>
+            <p>Contact me at: <a href="mailto:timothywallis@ucmerced.edu" style="color: white; text-decoration: none;">timothywallis@ucmerced.edu</a></p>
         </div>
     </footer>
+    <script src="../script.js"></script>
 </body>
 
 </html>
