@@ -41,8 +41,11 @@ body {
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar.collapsed {
-    width: var(--sidebar-collapsed-width);
+@media (max-width: 768px){
+    .sidebar {
+        opacity: 0;
+        width: 0 !important;
+    }
 }
 
 .sidebar-header {
@@ -58,11 +61,6 @@ body {
     font-weight: 700;
     white-space: nowrap;
     transition: opacity var(--transition-speed);
-}
-
-.sidebar.collapsed .sidebar-header h2 {
-    opacity: 0;
-    pointer-events: none;
 }
 
 .toggle-btn {
@@ -129,18 +127,18 @@ body {
 
 /* Main Content */
 .main-content {
-    margin-left: var(--sidebar-width);
-    transition: margin-left var(--transition-speed) ease;
     min-height: 100vh;
-}
-
-.sidebar.collapsed ~ .main-content {
-    margin-left: var(--sidebar-collapsed-width);
+    margin-left: var(--sidebar-width);
+    transition: margin-left var(--transition-speed);
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    background-image: url('./assets/background-image.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: rgba(150, 150, 150, .9);
     color: white;
     padding: 6rem 2rem;
     min-height: 100vh;
@@ -336,6 +334,11 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.account-img{
+    scale: 1.5;
+    offset: 0rem 1rem;
+}
+
 .form-group input,
 .form-group textarea {
     width: 100%;
@@ -393,15 +396,11 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .sidebar {
-        width: var(--sidebar-collapsed-width);
-    }
-
-    .sidebar-header h2 {
-        opacity: 0;
+        width: 0 !important;
     }
 
     .main-content {
-        margin-left: var(--sidebar-collapsed-width);
+        margin-left: 0;
     }
 
     .hero h1 {
