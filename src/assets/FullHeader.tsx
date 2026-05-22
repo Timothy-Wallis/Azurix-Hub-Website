@@ -3,7 +3,7 @@ import HeaderComponent from "./Header.tsx";
 import MobileOverlay from "./MobileOverlay.tsx";
 import SidebarNav from "./SideBarNav.tsx";
 interface HomeProps {
-    onNavigate: (page:  'home' | 'analytics' | 'settings') => void;
+    onNavigate: (page:  'home' | 'analytics' | 'settings' | 'login') => void;
     sidebarOpen: boolean;
     onToggleSidebar: () => void;
 }

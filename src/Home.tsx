@@ -5,7 +5,7 @@ import ResearchSection from './assets/Research.tsx';
 import Footer from './assets/Footer.tsx';
 import AboutSection from './assets/About.tsx';
 interface HomeProps {
-    onNavigate: (page:  'home' | 'analytics' | 'settings') => void;
+    onNavigate: (page:  'home' | 'analytics' | 'settings' | 'login') => void;
     sidebarOpen: boolean;
     onToggleSidebar: () => void;
 }

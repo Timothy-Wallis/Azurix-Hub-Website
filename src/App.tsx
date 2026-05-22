@@ -1,8 +1,10 @@
 
 import { useEffect, useState, lazy, Suspense } from 'react';
+import SignUp from './SignUp.tsx';
 
 const Home = lazy(() => import('./Home.tsx'));
 const Settings = lazy(() => import('./Settings.tsx'));
+const Login = lazy(() => import('./Login.tsx'));
 
 function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'analytics' | 'settings' | 'collaboration' | 'signup' | 'login'>('home');
@@ -54,6 +56,7 @@ function App() {
     </div>}>
     {currentPage == "home" && <Home onNavigate={handleNavigation} sidebarOpen={sidebarOpen} onToggleSidebar={toggleSidebar} />}
     {currentPage == "settings" && <Settings onNavigate={handleNavigation} sidebarOpen={sidebarOpen} onToggleSidebar={toggleSidebar}/>}
+    {currentPage == "login" && <SignUp/>}
   </Suspense>
 
 }

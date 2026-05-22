@@ -1,7 +1,7 @@
 import { createElement, type JSX } from "react";
 import SpanComponent from "./SpanComp.tsx";
 interface HomeProps {
-    onNavigate: (page:  'home' | 'analytics' | 'settings') => void;
+    onNavigate: (page:  'home' | 'analytics' | 'settings' | 'login') => void;
     onToggleSidebar: () => void;
 }
 export default function Header({onNavigate, onToggleSidebar}: HomeProps): JSX.Element {
@@ -27,7 +27,7 @@ export default function Header({onNavigate, onToggleSidebar}: HomeProps): JSX.El
                 createElement('span', { className: 'theme-icon-dark', "aria-hidden": true }, '☀️')
             ),
             createElement('button', { className: 'btn btn-login', onClick: () => {
-                onNavigate("settings");
+                onNavigate("login");
             }, style: {"cursor": "pointer"}}, 'Login')
         )
     )
