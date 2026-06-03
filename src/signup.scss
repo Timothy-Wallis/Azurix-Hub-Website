@@ -17,7 +17,7 @@ $white: rgba(255,255,255,0.3);
 form {
   background: $white;
   padding: 3em;
-  height: 320px;
+  height: fit-content;
   border-radius: 20px;
   border-left: 1px solid $white;
   border-top: 1px solid $white;
@@ -53,7 +53,7 @@ form {
   
   input {
     background: transparent;
-    width: 200px;
+    width: 15dvw;
     padding: 1em;
     margin-bottom: 2em;
     border: none;
@@ -164,4 +164,30 @@ select:focus,
 textarea:focus,
 button:focus {
     outline: none;
+}
+
+.social div:hover{
+  cursor: pointer;
+  background-color: rgba(223, 223, 223, 0.5);
+  color: rgba(29, 29, 29, 0.6);
+}
+
+.social div{
+  width: fit-content;
+  margin: auto;
+  //background-color: red;
+  padding: 10px;
+  transition: all 1s ease;
+  border-radius: 20px;
+}
+
+.submit{
+  width: fit-content;
+  padding-left: 2dvw;
+  padding-right: 2dvw;
+  transition: background-color 250ms ease-in;
+}
+
+.submit:hover{
+  background-color: rgba(7, 188, 243, 0.3);
 }

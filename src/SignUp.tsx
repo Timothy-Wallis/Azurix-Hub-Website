@@ -1,6 +1,7 @@
 import './signup.scss'
 import { useState } from 'react'
 import { supabase } from './supabase'
+import Warning from './assets/appComponents/Warning';
 
 export default function SignUp() {
     const [email, setEmail] = useState('');
@@ -79,11 +80,9 @@ export default function SignUp() {
                         onChange={e => setConfirm(e.target.value)}
                     /><br />
 
-                    {error && <p className='error'>{error}</p>}
+                    {error && <Warning WarningMessage={error}/>}
 
-                    <input type="submit" value="Sign Up" /><br />
-
-                    <a href="">Forgot Password?</a>
+                    <input type="submit" value="Sign Up" className='submit'/><br />
 
                     <div className='social'>
                         <div onClick={signInWithGoogle}>Google</div>

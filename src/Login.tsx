@@ -2,6 +2,7 @@ import './login.css'
 import { useState } from 'react';
 
 import { supabase } from './supabase'
+import Warning from './assets/appComponents/Warning.tsx'
 
 const OAuthLogin = () => {
     const signInWithGoogle = () => supabase.auth.signInWithOAuth({ provider: "google", options: { redirectTo: window.location.origin } });
@@ -40,7 +41,7 @@ export default function Login() {
                 <label htmlFor='password'>Password</label>
                 <input type="password" placeholder='Password' id="password" autoComplete='current-password' value={password}
                     onChange={e=>setPassword(e.target.value)}/>
-                {error && <p className='error'>{error}</p>}
+                {error && <Warning WarningMessage={error}/>}
                 <button type="submit">Log in</button>
                 <OAuthLogin />
             </form>
