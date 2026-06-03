@@ -1,26 +1,49 @@
 import './login.css'
-export default function Login(){
-    return(
-        <div>
-        <div className='background'>
-            <div className='shape'></div>
-            <div className='shape'></div>
+import { useState } from 'react';
+
+import { supabase } from './supabase'
+
+const OAuthLogin = () => {
+    const signInWithGoogle = () => supabase.auth.signInWithOAuth({ provider: "google", options: { redirectTo: window.location.origin } });
+    const signInWithGithub = () => supabase.auth.signInWithOAuth({ provider: "github", options: { redirectTo: window.location.origin } });
+
+    return (
+        <div className='social'>
+            <div className="go" onClick={signInWithGoogle}>Google</div>
+            <div className='git' onClick={signInWithGithub}>Github</div>
         </div>
-        <form>
-            <h3>Login</h3>
+    )
+}
+export default function Login() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
-            <label htmlFor='username'>Username</label>
-            <input type='text' placeholder='Email' id="username" autoComplete="username"/>
+    const handleLogin = async (e: React.FormEvent) => {
+        e.preventDefault(); // stops page refresh
+        const { error } = await supabase.auth.signInWithPassword({ email, password });
+        if (error) setError(error.message);
+    };
+    return (
+        <div>
+            <div className='background'>
+                <div className='shape'></div>
+                <div className='shape'></div>
+            </div>
+            <form onSubmit={handleLogin}>
+                <h3>Login</h3>
 
-            <label htmlFor='password'>Password</label>
-            <input type="password" placeholder='Password' id="password" autoComplete='current-password'/>
+                <label htmlFor='username'>Username</label>
+                <input type='text' placeholder='Email' id="username" autoComplete="username" value={email}
+                onChange={e=>setEmail(e.target.value)}/>
 
-            <button>Log in</button>
-            <div className='social'>
-                <div className="go"><i className="fab fa-google"></i>  Google</div>
-                <div className="fb"><i className="fab fa-facebook"></i>  Facebook</div>
-            </div>        
-        </form>
+                <label htmlFor='password'>Password</label>
+                <input type="password" placeholder='Password' id="password" autoComplete='current-password' value={password}
+                    onChange={e=>setPassword(e.target.value)}/>
+                {error && <p className='error'>{error}</p>}
+                <button type="submit">Log in</button>
+                <OAuthLogin />
+            </form>
         </div>
     )
 }
