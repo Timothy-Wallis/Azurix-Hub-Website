@@ -86,19 +86,25 @@ Iterum-Sciences/
 |---------|-------------|
 | `npm run dev` | Run the Vite development server |
 | `npm run build` | Type-check and build production assets |
-| `npm run lint` | Run ESLint across the repository |
 | `npm run preview` | Preview the built app locally |
 
+## Current Progress
+
+**This software is not available for account creation as of yet.**
+**Please be patient, and refer to the page for any issues that may occur from this**
+
 ## Tools
-
-Teaching Sim
-
-Genomics Software
+| Type | Release Date |
+|------|--------------|
+| Teaching Tools | In Beta - Release with first update V1.0.0 |
+| Genomic Software | Not Available - Release with update +V1.0.0 |
 
 ## Contact
 
-For questions or support, please reach out at **timothywallis@ucmerced.edu**.
+For questions or concerns, feel free to reach out at **timothywallis@ucmerced.edu**.
 
 ## License
+
+**This software is for anyone to freely use as is - Full Release of first version V1.0.0**
 
 © 2026 Iterum Sciences. All rights reserved. See [LICENSE](LICENSE) for details.
