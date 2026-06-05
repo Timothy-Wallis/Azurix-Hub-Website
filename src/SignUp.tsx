@@ -55,7 +55,7 @@ export default function SignUp() {
             <div className='sign-container'>
                 <form onSubmit={handleSignup}>
                     <p>Welcome</p>
-
+                    {error && <Warning WarningMessage={error}/>}
                     <input
                         type="email"
                         placeholder='Email'
@@ -80,7 +80,7 @@ export default function SignUp() {
                         onChange={e => setConfirm(e.target.value)}
                     /><br />
 
-                    {error && <Warning WarningMessage={error}/>}
+                    
 
                     <input type="submit" value="Sign Up" className='submit'/><br />
 

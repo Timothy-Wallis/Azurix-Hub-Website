@@ -1,3 +1,4 @@
+import './Warning.css'
 interface WarningProps{
     WarningMessage: string;
 }
